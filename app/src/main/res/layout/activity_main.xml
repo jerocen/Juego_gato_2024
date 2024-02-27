@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/black"
+    >
+
+    <RelativeLayout
+        android:id="@+id/marcador"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/lineaGuide"
+        android:background="@color/gray"
+        >
+
+        <TextView
+            android:id="@+id/jug1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="Jugador(a) 1"
+            android:textSize="20dp"
+            android:textColor="@color/player_blue"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/vs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_toStartOf="@id/jug2"
+            android:layout_toEndOf="@id/jug1"
+            android:text="VS"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textColor="@color/vs_color"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/jug2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="Jugador(a) 2"
+            android:textSize="20dp"
+            android:textColor="@color/player_red"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/nameJug1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/jug1"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:text=""
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/nameJug2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20dp"
+            android:layout_below="@id/jug2"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="15dp"
+            />
+
+        <TextView
+            android:id="@+id/punJug1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/jug1"
+            android:layout_alignParentStart="true"
+            android:text="0"
+            android:textSize="60dp"
+            android:layout_marginStart="145dp"
+            android:textColor="@color/player_blue"
+            android:background="@color/dark_player_blue"
+            android:padding="5dp"
+            />
+
+        <TextView
+            android:id="@+id/punJug2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/jug2"
+            android:layout_marginEnd="145dp"
+            android:textColor="@color/player_red"
+            android:background="@color/dark_player_red"
+            android:padding="5dp"
+            />
+
+        <TextView
+            android:id="@+id/turnJug"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Es turno de: "
+            android:textSize="20dp"
+            android:layout_below="@id/punJug1"
+            android:layout_marginStart="75dp"
+            android:textColor="@color/turno_color"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/jugInTurn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jugador(a) 1"
+            android:textSize="20dp"
+            android:layout_below="@id/punJug2"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@id/turnJug"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lineaGuide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tablero"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/marcador"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/black_gray"
+        android:layout_margin="45dp"
+        >
+
+        <TextView
+            android:id="@+id/cu1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="-"
+            android:textSize="50dp"
+            android:textAlignment="center"
+            android:background="@color/black"
+            android:textColor="@color/neutro_color_jug"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cu4"
+            app:layout_constraintEnd_toStartOf="@id/cu2"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:id="@+id/cu2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/black"
+            android:text="-"
+            android:textSize="50dp"
+            android:textColor="@color/neutro_color_jug"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cu1"
+            app:layout_constraintEnd_toStartOf="@id/cu3"
+            app:layout_constraintBottom_toTopOf="@id/cu5"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:id="@+id/cu3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/black"
+            android:text="-"
+            android:textSize="50dp"
+            android:textColor="@color/neutro_color_jug"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cu6"
+            app:layout_constraintStart_toEndOf="@id/cu2"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:id="@+id/cu4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/black"
+            android:text="-"
+            android:textSize="50dp"
+            android:textColor="@color/neutro_color_jug"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cu1"
+            app:layout_constraintBottom_toTopOf="@id/cu7"
+            app:layout_constraintEnd_toStartOf="@id/cu5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:id="@+id/cu5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/black"
+            android:text="-"
+            android:textSize="50dp"
+            android:textColor="@color/neutro_color_jug"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/cu2"
+            app:layout_constraintStart_toEndOf="@id/cu4"
+            app:layout_constraintEnd_toStartOf="@id/cu6"
+            app:layout_constraintBottom_toTopOf="@id/cu8"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:id="@+id/cu6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/black"
+            android:text="-"
+            android:textSize="50dp"
+            android:textColor="@color/neutro_color_jug"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cu3"
+            app:layout_constraintBottom_toTopOf="@id/cu9"
+            app:layout_constraintStart_toEndOf="@id/cu5"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:id="@+id/cu7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/black"
+            android:text="-"
+            android:textSize="50dp"
+            android:textColor="@color/neutro_color_jug"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cu4"
+            app:layout_constraintEnd_toStartOf="@id/cu8"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:id="@+id/cu8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/black"
+            android:text="-"
+            android:textSize="50dp"
+            android:textColor="@color/neutro_color_jug"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cu7"
+            app:layout_constraintEnd_toStartOf="@id/cu9"
+            app:layout_constraintTop_toBottomOf="@id/cu5"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:id="@+id/cu9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/black"
+            android:textColor="@color/neutro_color_jug"
+            android:text="-"
+            android:textSize="50dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cu6"
+            app:layout_constraintStart_toEndOf="@id/cu8"
+            android:layout_margin="10dp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
